@@ -1,11 +1,16 @@
-public class Node{
+import java.io.Serializable;
 
-    private String node_data;
+public abstract class Node implements Serializable{
+    private static final long serialVersionUID = 1L;
+    private String data;
 
-    public Node(String data){ node_data = data; }
-
-    public void SetData(String data){node_data = data;}
-    public String GetData(){ return node_data;}
-
-
+    public String getData(){
+        return data;
+    }
+    public Node(String question){
+        data = question;
+    }
+    public abstract void SetRA(String answer);
+    public abstract void SetFA(String answer);
+    public abstract boolean run();
 }
